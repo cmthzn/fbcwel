@@ -402,7 +402,7 @@ def unfollow(posts):
 		print '[*] zrobione'
 		bot()
 	except KeyboardInterrupt:
-		print '\r[!] Stopped'
+		print '\r[!] zatrzymano'
 		bot()
 def poke(posts):
 	global token , WT
@@ -427,19 +427,19 @@ def poke(posts):
 				print W + '[' + R + id + W + '] failed'
 			except TypeError:
 				print W + '[' + G + id + W + '] pokes'
-		print '[*] Done'
+		print '[*] zrobione'
 		bot()
 	except KeyboardInterrupt:
-		print '\r[!] Stopped   '
+		print '\r[!] zatrzymano   '
 		bot()
 	except (requests.exceptions.ConnectionError):
-		print '[!] Connection Error'
+		print '[!] problem z polaczeniem'
 		bot()
 def albums(posts):
 	global token , WT
 
-	print '\r[*] all id successfully retrieved                 '
-	print '[*] Start'
+	print '\r[*] pomyslnie pozyskano wszystkie id postow                 '
+	print '[*] start'
 
 	try:
 		counter = 0
@@ -455,13 +455,13 @@ def albums(posts):
 				print W + '[' + R + post['name'] + W + '] Failed'
 			except TypeError:
 				print W + '[' + G + post['name'] + W + '] femoved'
-		print '[*] Done'
+		print '[*] zrobione'
 		bot()
 	except KeyboardInterrupt:
-		print '\r[!] Stopped  '
+		print '\r[!] zatrzymano  '
 		bot()
 	except (requests.exceptions.ConnectionError):
-		print '[!] connection error'
+		print '[!] problem z polaczeniem'
 		bot()
 ######################################################################################################################
 #			    Bot reaction
@@ -476,7 +476,7 @@ def menu_reaction_ask():
 		type = 'LIKE'
 		bot_ask()
 	elif cek in ['2','02']:
-		type = 'LOVE'
+		type = 'SUPER'
 		bot_ask()
 	elif cek in ['3','03']:
 		type = 'WOW'
@@ -485,41 +485,41 @@ def menu_reaction_ask():
 		type = 'HAHA'
 		bot_ask()
 	elif cek in ['5','05']:
-		type = 'SAD'
+		type = 'PRZYKRO MI'
 		bot_ask()
 	elif cek in ['6','06']:
-		type = 'ANGRY'
+		type = 'WRR'
 		bot_ask()
 	elif cek.lower() == 'menu':
 		menu_reaction()
 		menu_reaction_ask()
 	elif cek.lower() == 'exit':
-		print '[!] Exiting program !!'
+		print '[!] wylaczanie programu'
 		sys.exit()
 	elif cek.lower() == 'token':
 		try:
 			open('cookie/token.log')
-			print '[!] an access token already exists'
-			cek = raw_input('[?] Are you sure you want to continue [Y/N] ')
+			print '[!] token dostepu juz istnieje'
+			cek = raw_input('[?] jestes pewien ze chcesz kontynuowac? [Y/N] ')
 			if cek.lower() != 'y':
-				print '[*] Canceling '
+				print '[*] anulowanie'
 				bot()
 		except IOError:
 			pass
 
-		print '\n' + '[*] Generate Access token facebook [*]'.center(44) + '\n'
-		print '[Warn] please turn off your VPN before using this feature !!!'
+		print '\n' + '[*] wygeneruj token dostepu fb [*]'.center(44) + '\n'
+		print '[uwaga] wylacz vpn podczas korzystania z tej funkcji !!!'
 		id()
 	elif cek in ['0','00']:
-		print '[!] back to bot menu'
+		print '[!] powrot do auto menu'
 		bot()
 
 	else:
 		if cek == '':
 			menu_reaction_ask()
 		else:
-			print "[!] command '" + cek + "' not found"
-			print "[!] type 'menu' to show menu bot"
+			print "[!] komenda '" + cek + "' nie znaleziona"
+			print "[!] wpisz 'menu' aby zobaczyc menu auto"
 			menu_reaction_ask()
   except KeyboardInterrupt:
 	menu_reaction_ask()
@@ -527,21 +527,21 @@ def menu_reaction_ask():
 def bot_ask():
 	global id , WT , token
 
-	print '[*] load access token '
+	print '[*] zaladuj token dostepu '
 	try:
 		token = open('cookie/token.log','r').read()
-		print '[*] Success load access token'
+		print '[*] pomyslnie zaladowano token dostepu'
 	except IOError:
-		print '[!] Failed load access token'
-		print "[!] type 'token' to generate access token"
+		print '[!] nie mozna zaladowac tokenu dostepu'
+		print "[!] wpisz 'token' aby wygenerowac token dostepu"
 		menu_reaction_ask()
 
 	WT = raw_input(W + '[?] [' + R + 'W' + W + ']allpost or [' + R + 'T' + W + ']arget (' + R + 'W' + W + '/' + R + 'T' + W + ') : ')
 	if WT.upper() == 'T':
-		id = raw_input('[?] id facebook : ')
+		id = raw_input('[?] id: ')
 		if id == '':
-			print "[!] id target can't be empty"
-			print '[!] Stopped'
+			print "[!] pole 'id' nie moze byc puste"
+			print '[!] zatrzymano'
 			menu_reaction_ask()
 
 	else:
