@@ -317,7 +317,7 @@ def comment(posts , amount):
 		print '[*] zrobione'
 		bot()
 	except KeyboardInterrupt:
-                print '\r[!] zatrzymano
+                print '\r[!] zatrzymano'
 		bot()
 def remove(posts):
 	global token , WT
