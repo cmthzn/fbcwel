@@ -27,7 +27,7 @@ except ImportError:
 	print W + ' '
 	print ('O S I F').center(44)
 	print ' '
-	print "[!] Nie moglem wyswietlic moudulu 'requests'\n"
+	print "[!] nie moglem wyswietlic moudulu 'requests'\n"
 	sys.exit()
 ####################################################################
 #                    Set Default encoding
@@ -63,10 +63,10 @@ def show_program():
                     %sSUPER INFO KURWO%s
  ------------------------------------------------------
 
-    Autor     sl1m / wnuku
-    Nazwa     Fejsbuk Informejszon
-    Wersja    Full HD PornHub Premium+
-    Date      22/03/2019 
+    autor     sl1m / wnuku
+    nazwa     Fejsbuk Informejszon
+    wersja    Full HD PornHub Premium+
+    data      22/03/2019 
 
 * jak znajdziesz jakies bledy to pisz do mnie
 
@@ -100,7 +100,7 @@ def info_ga():
 '''%(G,W)
 def menu_bot():
 	print '''
-   %sNumber                  INFO%s
+   %sNR                  INFO%s
  ---------   ------------------------------------
 
    [ 01 ]      auto reakcje
@@ -116,7 +116,7 @@ def menu_bot():
 '''%(G,W)
 def menu_reaction():
 	print '''
-   %sNumber                  INFO%s
+   %sNR                  INFO%s
  ----------   ------------------------------------
 
    [ 01 ]      like
@@ -131,7 +131,7 @@ def menu_reaction():
 ####################################################################
 #                     GENERATE ACCESS TOKEN
 def get(data):
-	print '[*] Generuj token dostepu '
+	print '[*] generuj token dostepu '
 
 	try:
 		os.mkdir('cookie')
@@ -155,7 +155,7 @@ def get(data):
 		main()
 	except requests.exceptions.ConnectionError:
 		print '[!] nie udalo sie utworzyc tokenu'
-		print '[!] problem z polaczeniem !!!'
+		print '[!] problem z polaczeniem'
 		os.remove('cookie/token.log')
 		main()
 def id():
@@ -470,7 +470,7 @@ def menu_reaction_ask():
   try:
 	global type
 
-	cek = raw_input(R + 'sl1m' + W + '/' + R + 'Bot' + W + '/' + R + 'Reaction' + W + ' >> ')
+	cek = raw_input(R + 'sl1m' + W + '/' + R + 'auto' + W + '/' + R + 'reakcje' + W + ' >> ')
 
 	if cek in ['1','01']:
 		type = 'LIKE'
@@ -536,7 +536,7 @@ def bot_ask():
 		print "[!] wpisz 'token' aby wygenerowac token dostepu"
 		menu_reaction_ask()
 
-	WT = raw_input(W + '[?] [' + R + 'W' + W + ']allpost or [' + R + 'T' + W + ']arget (' + R + 'W' + W + '/' + R + 'T' + W + ') : ')
+	WT = raw_input(W + '[?] [' + R + 'W' + W + ']wszystkie lub [' + R + 'T' + W + ']arget (' + R + 'W' + W + '/' + R + 'T' + W + ') : ')
 	if WT.upper() == 'T':
 		id = raw_input('[?] id: ')
 		if id == '':
@@ -552,39 +552,39 @@ def bot():
   try:
 	global type , message , id , WT , token
 
-	cek = raw_input(R + 'sl1m' + W +'/' + R +'Bot ' + W + '>> ')
+	cek = raw_input(R + 'sl1m' + W +'/' + R +'auto ' + W + '>> ')
 
 	if cek in ['1','01']:
 		menu_reaction()
 		menu_reaction_ask()
 	elif cek in ['2','02']:
-		print '[*] load access token'
+		print '[*] ladowanie tokenu dostepu'
 		try:
 			token = open('cookie/token.log','r').read()
-		        print '[*] Success load access token'
+		        print '[*] pomyslnie zaladowano token'
 		except IOError:
-	                print '[!] Failed load access token'
-			print "[!] type 'token' to generate access token"
+	                print '[!] nie mozna zaladowac tokenu'
+			print "[!] wpisz 'token' zeby go wygenerowac"
 	                bot()
 
 		WT = raw_input(W + '[?] [' + R + 'W' + W + ']allpost or [' + R + 'T' + W + ']arget (' + R + 'W' + W + '/' + R + 'T' + W + ') : ')
 		if WT.lower() == "w" or WT.lower() == '':
 			WT = 'wallpost'
 		else:
-			id = raw_input('[?] Id Target : ')
+			id = raw_input('[?] id: ')
 
 			if id == '':
-				print "[!] id target can't be empty"
-				print '[!] Stopped'
+				print "[!] pole id nie moze byc puste"
+				print '[!] zatrzymano'
 				bot()
 
 		print '--------------------------------------------------'
-		print "  [Note] Use the '</>' symbol to change the line\n"
+		print "  [Note] uzyj '</>' aby zmienic linie\n"
 
-		message = raw_input('[?] Your Message : ')
+		message = raw_input('[?] twoja wiadomosc : ')
 		if message == '':
-			print "[!] Message can't be empty"
-			print '[!] Stopped'
+			print "[!] widaomosc nie moze byc pusta"
+			print '[!] zatrzymano'
 			bot()
 		else:
 			message = message.replace('</>','\n')
@@ -593,107 +593,107 @@ def bot():
 
 	elif cek in ['4','04']:
 		WT = 'req'
-		print '[*] load access token    '
+		print '[*] ladowanie tokenu dostepu    '
 
 		try:
 			token = open('cookie/token.log','r').read()
-			print '[*] Success load access token'
+			print '[*] pomyslnie zaladowano token'
 		except IOError:
-			print '[!] Failed load access token   '
-			print "[!] type 'token' to generate access token"
+			print '[!] nie mozna zaladowac tokenu   '
+			print "[!] wpisz 'token' zeby go wygenerowac"
 			bot()
 		confirm(post())
 	elif cek in ['3','03']:
 		WT = 'wallpost'
-		print '[*] load access token    '
+		print '[*] ladowanie tokenu dostepu    '
 
 		try:
 			token = open('cookie/token.log','r').read()
-			print '[*] Success load access token'
+			print '[*] pomyslnie zaladowano token'
 		except IOError:
-			print '[!] Failed load access token'
-			print "[!] type 'token' to generate access token"
+			print '[!] nie mozna zaladowac tokenu'
+			print "[!] wpisz 'token' zeby go wygenerowac"
 			bot()
 		poke(post())
 	elif cek in ['5','05']:
 		WT = 'me'
-		print '[*] load access token    '
+		print '[*] ladowanie tokenu    '
 
 		try:
 			token = open('cookie/token.log','r').read()
-			print '[*] Success load access token'
+			print '[*] pomyslnie zaladowano token'
 		except IOError:
-			print '[!] Failed load access token'
-			print "[!] type 'token' to generate access token"
+			print '[!] nie mozna zaladowac tokenu'
+			print "[!] wpisz 'token' zeby go wygenerowac"
 			bot()
 		remove(post())
 
 	elif cek in ['6','06']:
 		WT = 'friends'
-		print '[*] load access token     '
+		print '[*] ladowanie tokenu dostepu     '
 
 		try:
 			token = open('cookie/token.log','r').read()
-			print '[*] Success load access token'
+			print '[*] pomyslnie zaladowano token'
 		except IOError:
-			print '[!] Failed load access token'
-			print "[!] type 'token' to generate access token"
+			print '[!] nie mozna zaladowac tokenu'
+			print "[!] wpisz 'token' zeby go wygenerowac"
 			bot()
 		unfriend(post())
 
 	elif cek in ['7','07']:
 		WT = 'subs'
-		print '[*] load access token      '
+		print '[*] ladowanie tokenu dostepu      '
 
 		try:
 			token = open('cookie/token.log','r').read()
-			print '[*] success load access token'
+			print '[*] pomyslnie zaladowano token'
 		except IOError:
-			print '[!] Failed load access token'
-			print "[!] type 'token' to generate access token"
+			print '[!] nie mozna zaladowac tokenu'
+			print "[!] wpisz 'token' zeby go wygenerowac"
 			bot()
 		unfollow(post())
 	elif cek in ['8','08']:
 		WT = 'albums'
-		print '[*] Load access token      '
+		print '[*] ladowanie tokenu dostepu      '
 
 		try:
 			token = open('cookie/token.log','r').read()
-			print '[*] Success load access token'
+			print '[*] pomyslnie zaladowano token'
 		except IOError:
-			print '[!] Failed load access token'
-			print "[!] type 'token' to generate access token"
+			print '[!] nie mozna zaladowac tokenu'
+			print "[!] wpisz 'token' zeby go wygenerowac"
 		albums(post())
 
 	elif cek in ['0','00']:
-		print '[*] Back to main menu'
+		print '[*] powrot do menu glownego'
 		main()
 	elif cek.lower() == 'menu':
 		menu_bot()
 		bot()
 	elif cek.lower() == 'exit':
-		print '[!] Exiting program'
+		print '[!] wylaczanie'
 		sys.exit()
 	elif cek.lower() == 'token':
 		try:
 			open('cookie/token.log')
-			print '[!] an access token already exists'
-			cek = raw_input('[?] Are you sure you want to continue [Y/N] ')
+			print '[!] token juz istnieje'
+			cek = raw_input('[?] chcesz kontynuowac [Y/N] ')
 			if cek.lower() != 'y':
-				print '[*] Canceling '
+				print '[*] anulowanie '
 				bot()
 		except IOError:
 			pass
 
-		print '\n' + '[*] Generate Access token facebook [*]'.center(44) + '\n'
-		print '[Warn] please turn off your VPN before using this feature !!!'
+		print '\n' + '[*] generowanie tokenu dostepu [*]'.center(44) + '\n'
+		print '[uwaga] wylacz swoj vpn'
 		id()
 	else:
 		if cek == '':
 			bot()
 		else:
-			print "[!] command '"+cek+"' not found"
-			print '[!] type "menu" to show menu bot'
+			print "[!] nie znaleziono komendy '"+cek+"'"
+			print '[!] wpisz "menu" zeby zobaczyc auto menu'
 			bot()
   except KeyboardInterrupt:
 	bot()
@@ -705,13 +705,13 @@ def bot():
 
 def dump_id():
 
-	print '[*] Load Access Token'
+	print '[*] ladowanie tokenu dostepu'
 	try:
 		token = open("cookie/token.log",'r').read()
-		print '[*] success load access token'
+		print '[*] pomyslnie zaladowano token'
 	except IOError:
-		print '[!] failed load access token'
-		print "[*] type 'token' to generate access token"
+		print '[!] nie mozna zaladowac tokenu'
+		print "[*] wpisz 'token' zeby go wygenerowac"
 		main()
 
 	try:
@@ -719,7 +719,7 @@ def dump_id():
 	except OSError:
 		pass
 
-	print '[*] fetching all friends id'
+	print '[*] zdobywanie id wszystkich znajomych'
 	try:
 
 		r = requests.get('https://graph.facebook.com/me/friends?access_token='+token)
@@ -728,33 +728,33 @@ def dump_id():
 		out = open('output/' + n[0].split(' ')[0] + '_id.txt','w')
 		for i in a['data']:
 			out.write(i['id'] + '\n')
-			print '\r[*] %s retrieved'%(i['id']),;sys.stdout.flush();time.sleep(0.0001)
+			print '\r[*] %s zdobyto'%(i['id']),;sys.stdout.flush();time.sleep(0.0001)
 
 		out.close()
-		print '\r[*] all friends id successfuly retreived'
-		print '[*] file saved : output/' + n[0].split(' ')[0] + '_id.txt'
+		print '\r[*] pomyslnie zdobyto id wszystkich znajomych'
+		print '[*] zapisano plik w : output/' + n[0].split(' ')[0] + '_id.txt'
 		main()
 
 	except KeyboardInterrupt:
-		print '\r[!] Stopped'
+		print '\r[!] zatrzymano'
 		main()
 	except KeyError:
-		print '[!] failed to fetch friend id'
+		print '[!] nie mozna zdobyc id znajomych'
 		main()
 	except (requests.exceptions.ConnectionError , requests.exceptions.ChunkedEncodingError):
-		print '[!] Connection Error                 '
-		print '[!] Stopped'
+		print '[!] problem z polaczeniem                 '
+		print '[!] zatrzymano'
 		main()
 
 def dump_phone():
-	print '[*] load access token'
+	print '[*] ladowanie tokenu dostepu'
 
 	try:
 		token = open('cookie/token.log','r').read()
-		print '[*] Success load access token'
+		print '[*] pomyslnie zaladowano token'
 	except IOError:
-		print '[!] failed load access token'
-		print "[*] type 'token' to generate access token"
+		print '[!] nie mozna zaladowac tokenu'
+		print "[*] wpisz 'token' zeby go wygenerowac"
 		main()
 
 	try:
@@ -762,7 +762,7 @@ def dump_phone():
 	except OSError:
 		pass
 
-	print "[*] fetching all phone numbers"
+	print "[*] zdobywanie wszystkich numerow telefonu"
 	print '[*] start'
 
 	try:
@@ -781,30 +781,30 @@ def dump_phone():
 			except KeyError:
 				pass
 		out.close()
-		print '[*] done'
-		print "[*] all phone numbers successfuly retrieved"
-		print '[*] file saved : output/'+n[0].split(' ')[0] + '_phone.txt'
+		print '[*] zrobione'
+		print "[*] pomyslnie zdobyto wszystkie numery"
+		print '[*] zapisano plik w : output/'+n[0].split(' ')[0] + '_phone.txt'
 		main()
 	except KeyboardInterrupt:
-		print '\r[!] Stopped'
+		print '\r[!] zatrzymano'
 		main()
 	except KeyError:
-		print "[!] failed to fetch all phone numbers"
+		print "[!] nie udalo sie zdobyc numerow telefonu"
 		main()
 	except (requests.exceptions.ConnectionError , requests.exceptions.ChunkedEncodingError):
-		print '[!] Connection Error'
-		print '[!] Stopped'
+		print '[!] problem z polaczeniem'
+		print '[!] zatrzymano'
 		main()
 
 def dump_mail():
-	print '[*] load access token'
+	print '[*] ladowanie tokenu dostepu'
 
 	try:
 		token = open('cookie/token.log','r').read()
-                print '[*] Success load access token'
+                print '[*] pomyslnie zaladowano token'
 	except IOError:
-		print '[!] failed load access token'
-		print "[*] type 'token' to generate access token"
+		print '[!] nie mozna zaladowac tokenu'
+		print "[*] wpisz 'token' zeby go wygenerowac"
 		main()
 
 	try:
@@ -812,7 +812,7 @@ def dump_mail():
 	except OSError:
 		pass
 
-	print '[*] fetching all emails'
+	print '[*] zdobywanie emaili'
 	print '[*] start'
 
 	try:
@@ -832,33 +832,33 @@ def dump_mail():
 				pass
 		out.close()
 
-                print '[*] done'
-                print "[*] all emails successfuly retrieved"
-		print '[*] file saved : output/' + n[0].split(' ')[0] + '_mails.txt'
+                print '[*] zrobione'
+                print "[*] pomyslnie zdobyto adresy email"
+		print '[*] zapisano plik w : output/' + n[0].split(' ')[0] + '_mails.txt'
 		main()
 
 	except KeyboardInterrupt:
-		print '\r[!] Stopped'
+		print '\r[!] zatrzymano'
 		main()
 	except KeyError:
-		print "[!] failed to fetch all emails"
+		print "[!] nie udalo sie zdobyc adresow email"
 		main()
 	except (requests.exceptions.ConnectionError , requests.exceptions.ChunkedEncodingError):
-		print '[!] Connection Error'
-		print '[!] Stopped'
+		print '[!] problem z polaczeniem'
+		print '[!] zatrzymano'
 		main()
 
 def dump_id_id():
 	global target_id
 
-	print '[*] load access token'
+	print '[*] ladowanie tokenu dostepu'
 
 	try:
 		token = open('cookie/token.log','r').read()
-		print '[*] Success load access token'
+		print '[*] pomyslnie zaladowano token'
 	except IOError:
-		print '[!] failed load access token'
-		print "[*] type 'token' to generate access token"
+		print '[!] nie udalo sie zaladowac tokenu'
+		print "[*] wpisz 'token' zeby go wygenerowac"
 		main()
 
 	try:
@@ -866,7 +866,7 @@ def dump_id_id():
 	except OSError:
 		pass
 
-	print '[*] fetching all id from your friend'
+	print '[*] zdobywanie wszystkich id znaj'
 
 	try:
 		r = requests.get('https://graph.facebook.com/{id}?fields=friends.limit(5000)&access_token={token}'.format(id=target_id,token=token))
@@ -876,25 +876,25 @@ def dump_id_id():
 
 		for i in a['friends']['data']:
 			out.write(i['id'] + '\n')
-			print '\r[*] %s retrieved'%(i['id']),;sys.stdout.flush();time.sleep(0.0001)
+			print '\r[*] %s zdobyto'%(i['id']),;sys.stdout.flush();time.sleep(0.0001)
 		out.close()
 
-		print '\r[*] all friends id successfuly retreived'
-		print '[*] file saved : output/' + n[0].split(' ')[0] + '_' + target_id + '_id.txt'
+		print '\r[*] pomyslnie zdobyto id znajomych'
+		print '[*] zapisano plik w : output/' + n[0].split(' ')[0] + '_' + target_id + '_id.txt'
 		main()
 	except KeyboardInterrupt:
-		print '\r[!] Stopped'
+		print '\r[!] zatrzymano'
 		main()
 	except KeyError:
-		print '[!] failed to fetch friend id'
+		print '[!] nie mozna zdobyc id'
 		try:
 			os.remove('output/' + n[0].split(' ')[0] + '_' + target_id + '_id.txt')
 		except OSError:
 			pass
 		main()
 	except (requests.exceptions.ConnectionError , requests.exceptions.ChunkedEncodingError):
-		print '[!] Connection Error                      '
-		print '[!] Stopped'
+		print '[!] problem z polaczeniem                      '
+		print '[!] zatrzymano'
 #
 ###############################################################################
 
@@ -911,10 +911,10 @@ def main():
 		if len(jml) == 0:
 			getdata()
 		else:
-			print '[*] You have retrieved %s friends data'%(len(jml))
+			print '[*] Zebrales %s danych znajomych'%(len(jml))
 			main()
 	elif cek.lower() == 'get_info':
-		print '\n'+'[*] Information Gathering [*]'.center(44) + '\n'
+		print '\n'+'[*] zdobywanie info [*]'.center(44) + '\n'
 		search()
 	elif cek.lower() == 'bot':
 		menu_bot()
@@ -922,11 +922,11 @@ def main():
 	elif cek.lower() == "cat_token":
 		try:
 			o = open('cookie/token.log','r').read()
-			print '[*] Your access token !!\n\n' + o + '\n'
+			print '[*] twoj token dostepu \n\n' + o + '\n'
 			main()
 		except IOError:
-			print '[!] failed to open cookie/token.log'
-			print "[!] type 'token' to generate access token"
+			print '[!] nie mozna otworzyc cookie/token.log'
+			print "[!] wpisz 'token' zeby go wygenerowac"
 			main()
 
 	elif cek.lower() == 'clear':
@@ -942,39 +942,39 @@ def main():
 	elif cek.lower() == 'token':
 		try:
 			open('cookie/token.log')
-			print '[!] an access token already exists'
-			cek = raw_input('[?] Are you sure you want to continue [Y/N] ')
+			print '[!] token dostepu juz isntnieje'
+			cek = raw_input('[?] chcesz kontynuowac [Y/N] ')
 			if cek.lower() != 'y':
-				print '[*] Canceling '
+				print '[*] anulowanie '
 				bot()
 		except IOError:
 			pass
 
-		print '\n' + '[*] Generate Access token facebook [*]'.center(44) + '\n'
-		print '[Warn] please turn off your VPN before using this feature !!!'
+		print '\n' + '[*] wygeneruj token do fb [*]'.center(44) + '\n'
+		print '[uwaga] wylacz vpn przed uzyciem'
 		id()
 	elif cek.lower() == 'rm_token':
 		print '''
-[Warn] you must create access token again if 
-       your access token is deleted
+[uwaga] musisz utworzyc nowy token jesli 
+       twoj token jest usuniety
 '''
-		a = raw_input("[!] type 'delete' to continue : ")
+		a = raw_input("[!] wpisz 'delete' zeby kontynuowac : ")
 		if a.lower() == 'delete':
 			try:
 				os.system('rm -rf cookie/token.log')
-				print '[*] Success delete cookie/token.log'
+				print '[*] usunieto cookie/token.log'
 				main()
 			except OSError:
-				print '[*] failed to delete cookie/token.log'
+				print '[*] nie mozna usunac cookie/token.log'
 				main()
 		else:
-			print '[*] failed to delete cookie/token.log'
+			print '[*] nie mozna usunac cookie/token.log'
 			main()
 	elif cek.lower() == 'about':
 		show_program()
 		main()
 	elif cek.lower() == 'exit':
-		print "[!] Exiting Program"
+		print "[!] wylaczanie"
 		sys.exit()
 	elif cek.lower() == 'help':
 		info_ga()
@@ -993,13 +993,13 @@ def main():
 		if cek == '':
 			main()
 		else:
-			print "[!] command '"+cek+"' not found"
-			print '[!] type "help" to show command'
+			print "[!] nie znaleziono komendy '"+cek+"'"
+			print '[!] wpisz "help" zeby zobaczyc komendy'
 			main()
   except KeyboardInterrupt:
 	main()
   except IndexError:
-	print '[!] invalid parameter on command : ' + cek
+	print '[!] niewlasciwy parametr w komendzie : ' + cek
 	main()
 #
 ######################################################################################################################
@@ -1010,52 +1010,52 @@ def main():
 def getdata():
 	global a , token
 
-	print '[*] Load Access Token'
+	print '[*] ladowanie tokenu'
 
 	try:
 		token = open("cookie/token.log","r").read()
-		print '[*] Success load access token '
+		print '[*] zaladowano token '
 	except IOError:
-		print '[!] failed to open cookie/token.log'
-		print "[!] type 'token' to generate access token"
+		print '[!] nie mozna otworzyc cookie/token.log'
+		print "[!] wpisz 'token' zeby go wygenerowac"
 		main()
 
-	print '[*] fetching all friends data'
+	print '[*] zdobywanie danych znajomych'
 
 	try:
 		r = requests.get('https://graph.facebook.com/me/friends?access_token='+token)
 		a = json.loads(r.text)
 
 	except KeyError:
-		print '[!] Your access token is expired'
-		print "[!] type 'token' to generate access token"
+		print '[!] twoj token wygasl'
+		print "[!] wpisz 'token' zeby go wygenerowac"
 		main()
 
 	except requests.exceptions.ConnectionError:
-		print '[!] Connection Error'
-		print '[!] Stopped'
+		print '[!] problem z polaczeniem'
+		print '[!] zatrzymano'
 		main()
 
 	for i in a['data']:
 		jml.append(i['id'])
-		print '\r[*] fetching %s data from friends'%(len(jml)),;sys.stdout.flush();time.sleep(0.0001)
+		print '\r[*] zdobywanie %s danych ze znajomych'%(len(jml)),;sys.stdout.flush();time.sleep(0.0001)
 
-	print '\r[*] '+str(len(jml))+' data of friends successfully retrieved'
+	print '\r[*] '+str(len(jml))+' pomyslnie zdobyto dane'
 	main()
 
 def search():
 
 	if len(jml) == 0:
-                print "[!] no friend data in the database"
-                print '[!] type "get_data" to collect friends data'
+                print "[!] nie ma zadnych danych w bazie"
+                print '[!] wpisz "get_data" zeby zebrac dane znajomych'
                 main()
         else:
                 pass
 
-	target = raw_input("[!] Search Name or Id : ")
+	target = raw_input("[!] wyszukaj imie lub id : ")
 
 	if target == '':
-		print "[!] name or id can't be empty !!"
+		print "[!] imie lub id nie moze byc puste "
 		search()
 	else:
 		info(target)
@@ -1063,7 +1063,7 @@ def search():
 def info(target):
         global a , token
 
-        print '[*] Szukanie'
+        print '[*] szukanie'
 	for i in a['data']:
 
 	  if target in  i['name'] or target in i['id']:
@@ -1076,7 +1076,7 @@ def info(target):
 		print W
 
 		try:
-			print '\n[*] Id : '+i['id']
+			print '\n[*] id : '+i['id']
 		except KeyError:
 			pass
 		try:
@@ -1116,7 +1116,7 @@ def info(target):
 		except KeyError:
 			pass
 		try:
-			print '[*] hometown : '+y['hometown']['name']
+			print '[*] miasto rodzinne : '+y['hometown']['name']
 		except KeyError:
 			pass
 		try:
@@ -1156,9 +1156,9 @@ def info(target):
 					pass
 				try:
 					if i['end_date'] == "0000-00":
-						print '   [-] czas skonczenia : ---'
+						print '   [-] czas zakonczenia : ---'
 					else:
-						print '   [-] czas skonczenia : '+i['end_date']
+						print '   [-] czas zakonczenia : '+i['end_date']
 				except KeyError:
 					pass
 				try:
@@ -1169,11 +1169,11 @@ def info(target):
 		except KeyError:
 			pass
 		try:
-			print '[*] Czas aktualizacji : '+y['updated_time'][:10]+' '+y['updated_time'][11:19]
+			print '[*] czas aktualizacji : '+y['updated_time'][:10]+' '+y['updated_time'][11:19]
 		except KeyError:
 			pass
 		try:
-			print '[*] Jezyki : '
+			print '[*] jezyki : '
 			for i in y['languages']:
 				try:
 					print ' ~  '+i['name']
@@ -1198,7 +1198,7 @@ def info(target):
 		except KeyError:
 			pass
 		try:
-			print '[*] Ulubione druzyny : '
+			print '[*] ulubione druzyny : '
 			for i in y['favorite_teams']:
 				try:
 					print ' ~  '+i['name']
@@ -1207,7 +1207,7 @@ def info(target):
 		except KeyError:
 			pass
 		try:
-			print '[*] Szkola : '
+			print '[*] szkola : '
 			for i in y['education']:
 				try:
 					print ' ~  '+i['school']['name']
